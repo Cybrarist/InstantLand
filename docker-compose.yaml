@@ -1,0 +1,21 @@
+services:
+  discount-bandit:
+    build:
+      context: .
+    ports:
+      - 8080:80
+    networks:
+      - discount-bandit
+    volumes:
+      - ./database/database.sqlite:/app/database/database.sqlite
+      - ./.env:/app/.env
+    environment:
+      DB_CONNECTION: sqlite
+      DEFAULT_USER: "test"
+      DEFAULT_EMAIL: "docker@test.com"
+      DEFAULT_PASSWORD: "thisismypassword"
+      APP_TIMEZONE: UTC
+      SPA: 1
+      THEME_COLOR: Emerald
+      APP_URL: "http://localhost:8080"
+      ASSET_URL: "http://localhost:8080"

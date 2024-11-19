@@ -1,0 +1,23 @@
+var script = function () {
+{{javascript}}
+};
+
+// Define a new custom component
+window.gjsEditor.Components.addType('comp-with-js', {
+    model: {
+        defaults: {
+            components: `{{html}}`,
+            script,
+            // Add some style, just to make the component visible
+            styles: `{{css}}`
+        },
+    },
+});
+
+
+// Create a block for the component, so we can drop it easily
+window.gjsEditor.Blocks.add('{{slug}}', {
+label: '{{name}}',
+attributes: { class: 'fa fa-text' },
+content: { type: 'comp-with-js' },
+});

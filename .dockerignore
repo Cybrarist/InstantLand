@@ -1,4 +1,4 @@
-/vendor/
+### Laravel template
 node_modules/
 npm-debug.log
 yarn-error.log
@@ -22,8 +22,7 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-**/caddy
-frankenphp
-frankenphp-worker.php
-storage/logs/*
-storage/app/private/livewire-tmp/*
+.git
+.gitattributes
+.gitignore
+.idea
