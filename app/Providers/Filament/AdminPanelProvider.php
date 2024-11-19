@@ -13,6 +13,7 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\Support\Enums\MaxWidth;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -34,7 +35,6 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('/')
-            ->brandName('InstantLand')
             ->login()
             ->colors([
                 'primary' => Color::Emerald,
@@ -87,11 +87,12 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
             ->topNavigation()
-
-
-
-            ;
-
-
+            ->brandName("Discount Bandit")
+            ->maxContentWidth(MaxWidth::Full)
+            ->sidebarCollapsibleOnDesktop()
+            ->topNavigation(config('settings.top_nav'))
+            ->topbar(config('settings.disable_top_bar'))
+            ->breadcrumbs(config('settings.breadcrumbs'))
+            ->spa(config('settings.spa'));
     }
 }

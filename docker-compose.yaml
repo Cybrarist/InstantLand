@@ -1,11 +1,12 @@
 services:
-  discount-bandit:
+  instant-land:
+#    image: cybrarist/instant-land:latest-arm
     build:
       context: .
     ports:
       - 8080:80
     networks:
-      - discount-bandit
+      - instant-land
     volumes:
       - ./database/database.sqlite:/app/database/database.sqlite
       - ./.env:/app/.env
@@ -17,5 +18,10 @@ services:
       APP_TIMEZONE: UTC
       SPA: 1
       THEME_COLOR: Emerald
+      RSS_FEED: 1
+      TOP_NAVIGATION: 0
+      DISABLE_TOP_BAR: 0
+      BREADCRUMBS: 1
+      DISABLE_AUTH: 1
       APP_URL: "http://localhost:8080"
       ASSET_URL: "http://localhost:8080"
