@@ -1,7 +1,9 @@
 ![FreePalestine](./extra/palestine.png)
 
 # Instant Land
-Instant Land is a price tracker across multiple shopping websites simultaneously, and get notified when an item reaches the price you desire, so you don't have to keep checking shop stores for price changes.
+Instant Land is a simple marketing/website building tool, to create landing pages and campaigns.
+
+You can design your landing pages from scratch using highly customizable GrapeJs editor or copy code from any website you like and implement it within minutes.
 
 # Documentation
 
